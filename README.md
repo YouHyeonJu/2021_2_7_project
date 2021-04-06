@@ -4,7 +4,11 @@
 #
 ## 조원 소개
 ![계획서](\cap2.jpg)
+#
 ## 프로젝트 사용 기술
 ![계획서](\cap3.jpg)
+#
 ## 계획서
 ![계획서](\cap.jpg)
+#
+[![IU(아이유) _ Into the I-LAND](http://img.youtube.com/vi/QYNwbZHmh8g/0.jpg)](https://youtu.be/QYNwbZHmh8g?t=0s)
