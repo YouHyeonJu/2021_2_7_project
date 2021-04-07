@@ -11,4 +11,5 @@
 ## 계획서
 ![계획서](\cap.jpg)
 #
-[![IU(아이유) _ Into the I-LAND](http://img.youtube.com/vi/QYNwbZHmh8g/0.jpg)](https://youtu.be/QYNwbZHmh8g?t=0s)
+## 영상 설명
+[![프로젝트 설명ppt ](https://img.youtube.com/vi/h840zboUruY/0.jpg)](https://www.youtube.com/watch?v=h840zboUruY)
