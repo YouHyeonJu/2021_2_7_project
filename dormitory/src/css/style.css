@@ -1,0 +1,533 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  font-family: "BMHANNAPro";
+}
+
+@font-face {
+  font-family: "BMHANNAPro";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.0/BMHANNAPro.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cafe24Danjunghae";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Danjunghae.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Jal_Onuel";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Jal_Onuel.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+.chk {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  display: none;
+}
+
+.pageWrap {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(midnightblue, black);
+  overflow: hidden;
+}
+
+.pageWrap .cards {
+  width: 60%;
+  height: 100%;
+  float: left;
+  position: relative;
+}
+
+.pageWrap .cards .balloon {
+  display: inline-block;
+  position: relative;
+  background: #ffffff;
+  height: 70%;
+  width: 90%;
+  margin: 5% auto;
+  border-radius: 50%;
+  -webkit-box-reflect: below 0px -webkit-linear-gradient(bottom, rgba(
+          255,
+          255,
+          255,
+          0.5
+        )
+        0%, transparent 20%, transparent 100%);
+}
+.pageWrap .cards .balloon:before {
+  content: "";
+  position: absolute;
+  background: #ffffff;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  top: 50%;
+  left: 105%;
+  -webkit-box-reflect: below 0px -webkit-linear-gradient(bottom, rgba(
+          255,
+          255,
+          255,
+          0.5
+        )
+        0%, transparent 50%, transparent 100%);
+}
+.pageWrap .cards .balloon:after {
+  content: "";
+  position: absolute;
+  background: #ffffff;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  top: 55%;
+  left: 115%;
+  -webkit-box-reflect: below 0px -webkit-linear-gradient(bottom, rgba(
+          255,
+          255,
+          255,
+          0.5
+        )
+        0%, transparent 20%, transparent 100%);
+}
+
+.pageWrap .cards .balloon .titleBox {
+  text-align: center;
+  background: radial-gradient(ellipse at top, #9e98d9, transparent),
+    radial-gradient(ellipse at bottom, #a2cdff, transparent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin: 5% auto;
+  font-size: 3rem;
+  font-weight: 400;
+  color: transparent;
+}
+
+.pageWrap .closeBtn {
+  position: fixed;
+  z-index: 100;
+  display: none;
+  right: 0;
+}
+
+.page {
+  width: 50%;
+  height: 50%;
+  background-color: #000;
+  left: 25%;
+  position: absolute;
+  display: none;
+  overflow-y: auto;
+}
+
+.page .pageTop {
+  width: 100%;
+  height: 10%;
+  background-color: #eee;
+  float: left;
+  text-align: center;
+  font-size: 1.5vw;
+  line-height: 300%;
+}
+
+/* .page .pageTop span {
+  margin-top: 2%;
+  display: inline-block;
+} */
+.page .pageContainer {
+  width: 100%;
+  height: 90%;
+  float: left;
+}
+
+.page .pageContainer .roomBox {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.page .pageContainer form {
+  width: 90%;
+  height: 80%;
+  margin: 2% auto;
+}
+
+.page .pageContainer fieldset {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #000;
+  margin-bottom: 1%;
+}
+
+fieldset legend {
+  padding: 2% 5%;
+  background-color: #000;
+  color: #ffffff;
+  margin-left: 10%;
+  font-size: 1.5vw;
+}
+
+form .btn {
+  width: 100%;
+  height: 10%;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #fcad25;
+  color: #fff;
+  box-shadow: 0px 6px #efa424;
+  position: relative;
+}
+
+form .btn:active {
+  box-shadow: none;
+  top: 6px;
+}
+
+fieldset textarea {
+  width: 100%;
+  height: 100%;
+  font-size: 4rem;
+  border: none;
+  resize: none;
+  float: left;
+}
+
+.page .pageContainer .roomBox .threeFloorBox,
+.page .pageContainer .roomBox .fourFloorBox {
+  width: 100%;
+  height: 100%;
+}
+
+.page .pageContainer .roomBox .fourFloorBox {
+  display: none;
+}
+
+.page .pageContainer .roomBox .threeFloorBox .room,
+.page .pageContainer .roomBox .fourFloorBox .room {
+  width: 23%;
+  margin: 2% 1%;
+  height: 30%;
+  float: left;
+}
+
+.page .pageContainer .roomBox .threeFloorBox .room .roomNum:hover,
+.page .pageContainer .roomBox .fourFloorBox .room .roomNum:hover {
+  cursor: pointer;
+}
+
+.page .pageContainer .roomBox .threeFloorBox .room .roomNum,
+.page .pageContainer .roomBox .fourFloorBox .room .roomNum {
+  width: 100%;
+  height: 30%;
+  text-align: center;
+  font-size: 1.5vw;
+  position: relative;
+  background-color: #d8d8d8;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.page .pageContainer .roomBox .threeFloorBox .room .roomNum span,
+.page .pageContainer .roomBox .fourFloorBox .room .roomNum span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+}
+
+.page .pageContainer .roomBox .threeFloorBox .room .roomNum span:nth-child(1),
+.page .pageContainer .roomBox .fourFloorBox .room .roomNum span:nth-child(1) {
+  left: 15%;
+}
+
+.page .pageContainer .roomBox .threeFloorBox .room .roomNum .triangleBox,
+.page .pageContainer .roomBox .fourFloorBox .room .roomNum .triangleBox {
+  position: absolute;
+  top: 50%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+}
+
+.page .pageContainer .roomBox .threeFloorBox .room .triangleBox .triangle,
+.page .pageContainer .roomBox .fourFloorBox .room .triangleBox .triangle {
+  width: 0;
+  height: 0;
+  border: 0 solid transparent;
+  border-bottom-width: 10px;
+  border-top-width: 10px;
+  border-left: 10px solid black;
+  display: inline-block;
+}
+
+.page .pageContainer .roomBox .threeFloorBox .room .roomMember,
+.page .pageContainer .roomBox .fourFloorBox .room .roomMember {
+  width: 100%;
+  height: 70%;
+  transition: all 0.5s;
+  background-color: #d8d8d8;
+  display: none;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.page .pageContainer .roomBox .threeFloorBox .room .roomMember ul,
+.page .pageContainer .roomBox .fourFloorBox .room .roomMember ul {
+  width: 100%;
+  height: 100%;
+}
+
+.page .pageContainer .roomBox .threeFloorBox .room .roomMember ul li,
+.page .pageContainer .roomBox .fourFloorBox .room .roomMember ul li {
+  width: 45%;
+  height: 22%;
+  font-size: 1.2vw;
+  padding-left: 5%;
+  float: left;
+  padding-top: 3%;
+}
+
+.pageWrap .cards .balloon .page:hover {
+  cursor: pointer;
+}
+
+.pageWrap .bubbleBox {
+  width: 40%;
+  height: 30%;
+  float: left;
+  display: flex;
+}
+
+.pageWrap .bubbleBox .bubbleContent {
+  width: 22.5%;
+  height: auto;
+  float: left;
+  margin-right: 2.5%;
+  margin-top: 1%;
+}
+
+.pageWrap .bubbleBox .bubbleContent .bubble {
+  border-radius: 50%;
+  opacity: 0.5;
+  box-shadow: inset 0px 0px 26px 2px rgb(226, 156, 233);
+  width: 100%;
+  animation: bubbleMove 5s infinite ease-in-out;
+}
+
+.pageWrap .bubbleBox .bubbleContent .bubble:hover {
+  cursor: grab;
+}
+
+.pageWrap .monsterBox {
+  width: 40%;
+  height: 70%;
+  float: left;
+  position: relative;
+}
+
+.monsterBox .monsterLocate {
+  width: 70%;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Monster {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.monsterEye {
+  position: absolute;
+  top: 10%;
+  width: 40%;
+  height: 40%;
+  background: radial-gradient(#000000, #000000, #ffffff, #000000);
+  border-radius: 50%;
+}
+
+.monsterEye::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 35%;
+  height: 35%;
+  background: radial-gradient(rgba(255, 255, 255, 0.9), white, white);
+  border-radius: 50%;
+}
+
+.monsterEye.left {
+  left: 10%;
+}
+
+.monsterEye.right {
+  right: 10%;
+}
+
+.monsterMouth {
+  position: absolute;
+  bottom: 0;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: 30%;
+  background-color: #d96f6a;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.monsterMouth::before {
+  content: attr(data-before);
+  position: absolute;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: 1vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  z-index: 5;
+}
+
+.monsterMouth::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+  background: radial-gradient(orangered, crimson);
+  border-top-right-radius: 80%;
+  border-top-left-radius: 80%;
+}
+
+.monsterMouth .teeth {
+  position: absolute;
+  top: 0;
+  border: 2vw solid transparent;
+  border-top-color: azure;
+  border-top-width: 2rem;
+}
+
+.monsterMouth .teeth.left {
+  left: 0%;
+}
+
+.monsterMouth .teeth.right {
+  right: 0%;
+}
+
+/* @keyframes bubbleMove {
+  0%,
+  55%,
+  71%,
+  73%,
+  75%,
+  100% {
+    filter: brightness(1.2) saturate(1);
+  }
+
+  60%,
+  70%,
+  72%,
+  74% {
+    filter: brightness(2) saturate(2);
+  }
+
+  0%,
+  100% {
+    transform: translate3d(0);
+  }
+
+  20% {
+    transform: translate3d(10%, -10%, 1rem);
+  }
+
+  50% {
+    transform: translate3d(300%, 10%, 1rem);
+  }
+
+  80% {
+    transform: translate3d(40%, -20%, 0);
+  }
+} */
+
+/* @keyframes mouth {
+  0%,
+  50%,
+  90%,
+  100% {
+    width: 30%;
+    height: 30%;
+  }
+
+  60%,
+  85% {
+    width: 55%;
+    height: 45%;
+  }
+} */
+/* 
+@keyframes teethSize {
+  0%,
+  50%,
+  90%,
+  100% {
+    border-top-width: 2vw;
+  }
+
+  60%,
+  85% {
+    border-top-width: 4vw;
+  }
+} */
+
+.led {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  border: 0;
+  float: left;
+  margin-right: 10%;
+}
+.led.green {
+  box-shadow: 0 0 10px rgb(35, 241, 132);
+  background: rgb(6, 247, 118);
+}
+
+.led.green.room {
+  margin-top: 5%;
+  margin-left: 5%;
+}
+.led.red {
+  box-shadow: 0 0 10px rgb(247, 22, 30);
+  background: rgb(237, 28, 36);
+}

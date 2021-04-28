@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+        }
+        .box 
+        {
+            float: left;
+            width: 1000px;
+            height: 1040px;
+            background-color: green;
+          
+        }
+        .container
+        {
+            width: 1000px;
+            height: 250px;
+            padding-top: 10px;
+            float: left;
+        }
+        .contents
+        {
+            width: 230px;
+            height: 230px;
+            margin: 0px 10px 10px 10px;
+            background-color: lightgreen;
+            float: left;
+        }
+        .drop 
+        {
+            width: 800px;
+            height: 800px;
+            border: 1px solid #000;
+            float: left;
+        }
+        .remove
+        {
+            width: 300px;
+            height: 300px;
+            background-color: #000;
+        }
+
+        .sum 
+        {
+            width: 100%;
+            height: 300px;
+            background-color: #222;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<div class="box">
+    <div class="container">
+        <div class="contents" data-x="" data-y="" data-incart="false">상품<span id="list">1</span><br>가격<span>1000</span>원</div>
+        <div class="contents" data-x="" data-y="" data-incart="false">상품<span id="list">2</span><br>가격<span>1000</span>원</div>
+        <div class="contents" data-x="" data-y="" data-incart="false">상품<span id="list">3</span><br>가격<span>1000</span>원</div>
+        <div class="contents" data-x="" data-y="" data-incart="false">상품<span id="list">4</span><br>가격<span>1000</span>원</div>
+    </div>
+
+    <div class="container">
+        <div class="contents" data-x="" data-y="" data-incart="false">상품<span id="list">5</span><br>가격<span>1000</span>원</div>
+        <div class="contents" data-x="" data-y="" data-incart="false">상품<span id="list">6</span><br>가격<span>1000</span>원</div>
+        <div class="contents" data-x="" data-y="" data-incart="false">상품<span id="list">7<br>가격<span>1000</span>원</div>
+        <div class="contents" data-x="" data-y="" data-incart="false">상품<span id="list">8</span><br>가격<span>1000</span>원</div>
+    </div>
+
+    <div class="container">
+        <div class="contents" data-x="" data-y="" data-incart="false">상품<span id="list">9</span><br>가격<span>1000</span>원</div>
+        <div class="contents" data-x="" data-y="" data-incart="false">상품<span id="list">10</span><br>가격<span>1000</span>원</div>
+        <div class="contents" data-x="" data-y="" data-incart="false">상품<span id="list">11</span><br>가격<span>1000</span>원</div>
+        <div class="contents"data-x="" data-y="" data-incart="false">상품<span id="list">12</span><br>가격<span>1000</span>원</div>
+    </div>
+
+    <div class="container">
+        <div class="contents" data-x="" data-y="" data-incart="false">상품<span id="list">13</span><br>가격<span>1000</span>원</div>
+        <div class="contents" data-x="" data-y="" data-incart="false">상품<span id="list">14</span><br>가격<span>1000</span>원</div>
+        <div class="contents" data-x="" data-y="" data-incart="false">상품<span id="list">15</span><br>가격<span>1000</span>원</div>
+        <div class="contents" data-x="" data-y="" data-incart="false">상품<span id="list">16</span><br>가격<span>1000</span>원</div>
+    </div>
+</div>
+
+    <div class="drop">
+        <div class="remove"></div>
+    </div>
+    <div class="sum">
+        <ul class="list">
+            <li>d</li>
+        </ul><br>
+        <ul>
+            <li class="count">0개</li>
+            <li class="total_price">0원</li>
+        </ul>
+    </div>
+<script>
+    $( ".contents" ).draggable({
+        scroll: false,
+        cursor: "move",
+        start: function() {
+    
+            $(this).draggable('option', 'revert', true);
+            var offset = $(this).offset();
+            var x = offset.left;
+            var y = offset.top;
+          
+
+            
+
+            if($(this).attr("data-incart") == "false") {
+                $(this).attr("data-x",x);
+                $(this).attr("data-y",y);
+            }
+        }
+    });
+
+    $(".drop").droppable({
+          drop:function(evnet, ui) {
+              ui.draggable.draggable("option", "revert", false);
+              ui.draggable.attr("data-incart", "true");
+              sold();
+          }
+          
+      })
+
+      $(".remove").droppable({
+          drop:function(evnet, ui) {
+              var x = ui.draggable.attr("data-x");
+              var y = ui.draggable.attr("data-y");
+
+              ui.draggable.offset({
+                  top: y,
+                  left: x,
+              })
+              
+
+              ui.draggable.attr("data-incart", "false");
+              sold();
+            //   var span = ui.draggable.children("#list").text();
+              
+           
+          }
+      })
+
+      function sold() {
+          var itemList = $(".container > div");
+          var list="";
+          var count = 0;
+          var price = 0;
+         
+          for (var i = 0; i < itemList.length; i++ ) {
+              var incart = $(itemList[i]).attr("data-incart");
+              if (incart == "true") {
+               
+                  
+                    list += "<li>" + $(itemList[i]).find("span:nth-child(1)").text() + "</li>";
+              
+                    price += parseInt($(itemList[i]).find("span:nth-child(3)").text());
+                    count++;
+                    console.log(list);
+              }
+              
+          }
+          $(".list li").html(list);
+          $(".count").html(count + "개");
+          $(".total_price").html(price + "원");
+      }
+</script>
+    
+
+</body>
+</html>
