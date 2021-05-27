@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>띄워볼래</title>
+    <link rel="stylesheet" href="/stylesheets/print.css">
+</head>
+<body>
+    <section class="boxContainer">
+        <div class="btnContainer">
+            <div class="numberBtnBox">
+                <form action="/grade" method="POST">
+                <div class="showNumBox">
+                    <div class="defaultBox">
+                        <span>학번 :</span>
+                    </div>
+                    <input type="text" class="showNum" name="grade" value="">
+                </div>
+                <div class="numBox">
+                    <div class="boxes">
+                        <div class="btns">
+                            <div class="numbers">1</div>
+                        </div>
+                        <div class="btns">
+                            <div class="numbers">4</div>
+                        </div>
+                        <div class="btns">
+                            <div class="numbers">7</div>
+                        </div>
+                        <div class="btns">
+
+                        </div>
+                    </div>
+                    <div class="boxes">
+                        <div class="btns">
+                            <div class="numbers">2</div>
+                        </div>
+                        <div class="btns">
+                            <div class="numbers">5</div>
+                        </div>
+                        <div class="btns">
+                            <div class="numbers">8</div>
+                        </div>
+                        <div class="btns">
+                            <div class="numbers">0</div>
+                        </div>
+                    </div>
+                    <div class="boxes">
+                        <div class="btns">
+                            <div class="numbers">3</div>
+                        </div>
+                        <div class="btns">
+                            <div class="numbers">6</div>
+                        </div>
+                        <div class="btns">
+                            <div class="numbers">9</div>
+                        </div>
+                        <div class="btns"></div>
+                    </div>
+                </div>
+                <div class="fuctionBox">
+                    <button type="button" class="item del">지우기</button>
+                    <button class="item confirm">확인</button>
+                    <button type="button" class="item cancel">취소</button>
+                </div>
+                </form>
+            </div>
+            <div class="leftBtn">
+                <button class="button register">지문등록</button>
+            </div>
+            <div class="rightBtn">
+                <form action="/" method="POST">
+                <button class="button green" name="id" value="2">지문인식</button>
+            </form>
+            </div>
+        </div>
+    </section>
+    
+    <script src="/javascripts/jquery-3.5.1.js"></script>
+    <script src="/javascripts/print.js"></script>
+    <% if(error){ %>
+        <script>alert('다시 시도해주세요')</script>
+    <% } else if(success){ %>
+        <script>alert('출석확인되었습니다.')</script>
+    <% } else if(request){ %>
+
+    <% } else if(delay){ %>
+        <script>alert('등록기에서 손가락을 뗀 후 3초후에 다시 올려주세요')</script>
+    <% } else if(end){ %>
+        <script>alert('')</script>
+    <% } %>
+</body>
+</html>
