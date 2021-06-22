@@ -19,5 +19,8 @@
 ## 계획서
 ![계획서](/cap.jpg)
 #
-## 영상 설명
+## 영상 설명(프로젝트 설명)
 [![프로젝트 설명ppt ](https://img.youtube.com/vi/h840zboUruY/0.jpg)](https://www.youtube.com/watch?v=h840zboUruY)
+
+## 시연 영상
+[![프로젝트 설명ppt ](https://img.youtube.com/vi/snDmVCq4xbk/0.jpg)](https://www.youtube.com/watch?v=snDmVCq4xbk)
